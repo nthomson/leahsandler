@@ -1,0 +1,4 @@
+*.pyc
+*.db
+media/
+static-root/
