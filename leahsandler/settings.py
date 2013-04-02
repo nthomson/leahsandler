@@ -112,7 +112,7 @@ ROOT_URLCONF = 'leahsandler.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'leahsandler.wsgi.application'
 
-TEMPLATE_DIRS = [os.path.join(PROJECT_ROOT, 'templates')]
+TEMPLATE_DIRS = [path.join(PROJECT_ROOT, 'templates')]
 
 INSTALLED_APPS = (
     'django.contrib.auth',

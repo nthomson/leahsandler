@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Art of Leah Sandler</title>
+  <link rel='stylesheet' type='text/css' href='/static/css/style.css'>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('.blurnav a').click(function(){
+        var clicked = $(this).attr('href')
+        $('#content .fadebox').hide();
+        $(clicked).fadeIn();
+      })
+    });
+  </script>
+</head>
+<body>
+  <div id='contain'>
+    
+    <nav class='main blurbox'>
+      <ul class='blurnav'>
+        <li><a href='#home'>Home</a></li>
+        {% for cat in categories %} 
+        <li><a href='#{{cat.title|slugify}}'>{{cat.title}}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div id='content' class='blurbox'>
+      
+      <div id='home' class='fadebox'>
+        <h4>Home</h4>
+      </div>
+
+      {% for cat_name, pieces in cat_pieces.items %}
+        <div id='{{cat_name|slugify}}' class='fadebox'>
+
+        <h4>{{cat_name}}</h4>
+        {% for piece in pieces %}
+          <img src='{{piece.image.url}}' />
+        {% endfor %}
+        </div>
+
+      {% endfor %}
+      
+    </div>  
+  </div>
+</body>
+</html>

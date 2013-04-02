@@ -1,3 +1,5 @@
+from portfolio import views
+
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import settings
@@ -7,7 +9,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'leahsandler.views.home', name='home'),
+    url(r'^$', views.index, name='index'),
     # url(r'^leahsandler/', include('leahsandler.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
