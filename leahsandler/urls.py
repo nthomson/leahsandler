@@ -9,14 +9,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', views.index, name='index'),
-    # url(r'^leahsandler/', include('leahsandler.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
+    url(r'^portfolio/?$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
+    
 )
 
 urlpatterns += staticfiles_urlpatterns()
@@ -25,4 +20,5 @@ urlpatterns += patterns('',
   url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
     'document_root': settings.MEDIA_ROOT,
   }),
+  url('^', include('django.contrib.flatpages.urls')),
 )

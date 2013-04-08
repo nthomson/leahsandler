@@ -97,6 +97,12 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+PAGE_DEFAULT_TEMPLATE = 'pages/index.html'
+gettext_noop = lambda s: s
+PAGE_LANGUAGES = (
+    ('en-us', gettext_noop('US English')),
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -123,6 +129,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'portfolio',
+    'django.contrib.flatpages',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

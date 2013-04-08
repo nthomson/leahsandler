@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{% load portfolio_extras %}
+{% block body %}
+
+<ul class='art-categories'>
+{% for cat in categories %}
+  <li class='category'>
+    <div class='art-tile'>
+      <a href='#{{cat.title|slugify}}'>
+        <img src='{{cat.thumb.url}}' />
+        <h2 class='title'>{{cat.title}}</h2>
+      </a>
+    </div>
+    
+    <div class='art-in-category'>
+      {% for piece in cat.pieces %}
+        --{{piece.title}}
+        <br />
+      {% endfor %}
+    </div>
+  </li>
+
+{% endfor %}
+</ul>
+{% endblock %}

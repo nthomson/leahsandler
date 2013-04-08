@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Art of Leah Sandler</title>
+    
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    {% endblock css %}
+    
+    {% block js %}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+          $(function(){
+            $('.blurnav a').click(function(){
+              var clicked = $(this).attr('href')
+              $('#content .fadebox').hide();
+              $(clicked).fadeIn();
+            })
+          });
+        </script>
+    {% endblock js %}
+</head>
+<body>
+  <div id='contain'>
+    {% load flatpages %}
+    {% get_flatpages as flatpages %}
+    <ul class='nav-list'>
+    {% for page in flatpages %}
+     <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endfor %}
+    <li><a href="/portfolio/">Portfolio</a></li>
+    </ul>
+    <hr />
+    {%block body%}
+    
+    {%endblock body%}
+  </div>
+</body>
+</html>
