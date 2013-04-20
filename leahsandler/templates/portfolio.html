@@ -6,20 +6,23 @@
 {% for cat in categories %}
   <li class='category'>
     <div class='art-tile'>
-      <a href='#{{cat.title|slugify}}'>
-        <img src='{{cat.thumb.url}}' />
-        <h2 class='title'>{{cat.title}}</h2>
-      </a>
-    </div>
-    
-    <div class='art-in-category'>
+
+      
       {% for piece in cat.pieces %}
-        --{{piece.title}}
-        <br />
+
+        
+        <a class='fancybox {% if forloop.first %}hide{%endif%}' rel='{{cat.title|slugify}}' href='{{piece.image.url}}'>
+          <img src="{{piece.image.url}}" alt="" />
+        </a>
+        
       {% endfor %}
     </div>
+    
+      
   </li>
 
 {% endfor %}
 </ul>
 {% endblock %}
+
+

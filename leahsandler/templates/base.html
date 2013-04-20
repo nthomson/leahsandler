@@ -6,10 +6,15 @@
     {% block css %}
         <link rel="stylesheet" type="text/css" href="/static/css/reset.css" />
         <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        
+        <link rel="stylesheet" href="/static/fb/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
+        
     {% endblock css %}
     
     {% block js %}
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/fb/jquery.fancybox.pack.js?v=2.1.4"></script>
+        
         <script>
           $(function(){
             $('.blurnav a').click(function(){
@@ -19,10 +24,20 @@
             })
           });
         </script>
+        
+        
+          <script>
+          $(document).ready(function(){
+            $(".fancybox").fancybox();
+              console.log("what");
+            })
+        </script>
     {% endblock js %}
 </head>
 <body>
   <div id='contain'>
+    <h1 class='logo'>The Art of Leah Sandler</h1>
+    
     {% load flatpages %}
     {% get_flatpages as flatpages %}
     <ul class='nav-list'>
