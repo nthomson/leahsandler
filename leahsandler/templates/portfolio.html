@@ -11,9 +11,14 @@
       {% for piece in cat.pieces %}
 
         
-        <a class='fancybox {% if forloop.first %}hide{%endif%}' rel='{{cat.title|slugify}}' href='{{piece.image.url}}'>
+        <a class='fancybox' rel='{{cat.title|slugify}}' href='{{piece.image.url}}'>
           <img src="{{piece.image.url}}" alt="" />
+          <h2 class='title'>
+            {{cat.title}}
+          </h2>
         </a>
+        
+        
         
       {% endfor %}
     </div>
