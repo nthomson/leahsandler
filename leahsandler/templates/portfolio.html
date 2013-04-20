@@ -12,15 +12,18 @@
 
         
         <a class='fancybox' rel='{{cat.title|slugify}}' href='{{piece.image.url}}'>
-          <img src="{{piece.image.url}}" alt="" width=300 />
-          <h2 class='title'>
-            {{cat.title}}
-          </h2>
+          <div class='imagetile' style="background: url('{{piece.image.url}}') no-repeat;">
+          </div>
+          
+          
         </a>
         
         
         
       {% endfor %}
+      <h2 class='title'>
+        {{cat.title}}
+      </h2>
     </div>
     
       
