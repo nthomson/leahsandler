@@ -2,6 +2,7 @@ body, html {
   height: 100%;
   background: url('/static/img/dark_wall.png') repeat;
   color: #eee;
+  font-family: vegur, 'arial narrow';
 }
 img {
   margin: 0;
@@ -15,6 +16,8 @@ ul.art-categories {
 
 h1.logo {
   float: left;
+  font-weight: normal !important;
+  letter-spacing: 3px;
 }
 
 #contain {
@@ -78,7 +81,10 @@ li.category {
   position: absolute;
   top: 0;
 }
-
+h1 {
+  font-weight: normal;
+  letter-spacing: 2px;
+}
 .art-tile h2.title {
   transition: opacity .3s ease-in-out;
   opacity: 0;
